@@ -1,5 +1,5 @@
 public class MaquinaExpendedoraMejorada {
-    
+
     // El precio del billete
     private int precioBillete;
     // La cantidad de dinero que lleva metida el cliente actual
@@ -25,13 +25,18 @@ public class MaquinaExpendedoraMejorada {
     }
 
     public int vaciarDineroDeLaMaquina() {
-        int dineroVaciado;
-        dineroVaciado = balanceClienteActual + totalDineroAcumulado;
-        balanceClienteActual = 0;
-        totalDineroAcumulado = 0;
-        return dineroVaciado;
+        if(balanceClienteActual == 0) {
+            int dineroVaciado;
+            dineroVaciado = totalDineroAcumulado;
+            totalDineroAcumulado = 0;
+            return dineroVaciado;
+        }
+        else {
+            System.out.println("No se puede vaciar la máquina ya que un cliente esta usándola.");
+            return -1;
+        }
     }
-    
+
     /**
      * Devuelve el precio del billete
      */
@@ -64,7 +69,7 @@ public class MaquinaExpendedoraMejorada {
     public void imprimirBillete() {
         int cantidadDeDineroQueFalta;
         cantidadDeDineroQueFalta = precioBillete - balanceClienteActual;
-        
+
         if (cantidadDeDineroQueFalta <= 0) {        
             // Simula la impresion de un billete
             System.out.println("##################");
@@ -73,7 +78,7 @@ public class MaquinaExpendedoraMejorada {
             System.out.println("# " + precioBillete + " euros.");
             System.out.println("##################");
             System.out.println();         
-    
+
             // Actualiza el total de dinero acumulado en la maquina
             totalDineroAcumulado = totalDineroAcumulado + precioBillete;
             // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
@@ -81,10 +86,10 @@ public class MaquinaExpendedoraMejorada {
         }
         else {
             System.out.println("Necesitas introducir " + cantidadDeDineroQueFalta + " euros mas!");
-                    
+
         }            
     }
-    
+
     /**
      * Cancela la operacion de compra del cliente actual y le
      * devuelve al cliente el dinero que ha introducido hasta el momento
