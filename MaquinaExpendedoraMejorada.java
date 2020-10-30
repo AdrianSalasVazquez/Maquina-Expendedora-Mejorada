@@ -29,12 +29,11 @@ public class MaquinaExpendedoraMejorada {
             int dineroVaciado;
             dineroVaciado = totalDineroAcumulado;
             totalDineroAcumulado = 0;
-            return dineroVaciado;
         }
         else {
             System.out.println("No se puede vaciar la máquina ya que un cliente esta usándola.");
-            return -1;
         }
+        return -1;
     }
 
     /**
