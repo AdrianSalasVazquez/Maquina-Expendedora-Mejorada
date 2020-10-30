@@ -24,6 +24,7 @@ public class MaquinaExpendedoraMejorada {
         totalDineroAcumulado = 0;
         estacionOrigen = origen;
         estacionDestino = destino;
+        billetesVendidos = 0;
     }
 
     public int vaciarDineroDeLaMaquina() {
