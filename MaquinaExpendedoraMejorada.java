@@ -25,15 +25,18 @@ public class MaquinaExpendedoraMejorada {
     }
 
     public int vaciarDineroDeLaMaquina() {
+        int valorDevuelto;
         if(balanceClienteActual == 0) {
             int dineroVaciado;
             dineroVaciado = totalDineroAcumulado;
             totalDineroAcumulado = 0;
+            valorDevuelto = dineroVaciado;
         }
         else {
             System.out.println("No se puede vaciar la máquina ya que un cliente esta usándola.");
+            valorDevuelto = -1;
         }
-        return -1;
+        return valorDevuelto;
     }
 
     /**
