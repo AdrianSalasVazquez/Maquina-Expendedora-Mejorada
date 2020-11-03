@@ -16,6 +16,8 @@ public class MaquinaExpendedoraMejorada {
     private boolean maquinaPremio;
     // Número de billetes para vender
     private int billetesMaximos;
+    // Hace la cuenta hasta 3
+    private int cuentaTres;
 
     /**
      * Crea una maquina expendedora de billetes de tren con el 
@@ -31,6 +33,7 @@ public class MaquinaExpendedoraMejorada {
         billetesVendidos = 0;
         maquinaPremio = maquinaDePremio;
         billetesMaximos = numeroBilletesMaximos;
+        cuentaTres = 0;
     }
 
     public int vaciarDineroDeLaMaquina() {
@@ -111,9 +114,13 @@ public class MaquinaExpendedoraMejorada {
                 billetesVendidos = billetesVendidos + 1;
                 
                 if (maquinaPremio == true) {
+                    cuentaTres = cuentaTres + 1;
+                    if (cuentaTres == 3) {
                     double precioDescuento;
                     precioDescuento = (precioBillete*10.0)/100;
                     System.out.println("Tiene un descuento de " + precioDescuento + "€ en cualquier comercio");
+                    cuentaTres = 0;
+                }
                 }
             }
             else {
