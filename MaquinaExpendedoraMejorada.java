@@ -116,11 +116,11 @@ public class MaquinaExpendedoraMejorada {
                 if (maquinaPremio == true) {
                     cuentaTres = cuentaTres + 1;
                     if (cuentaTres == 3) {
-                    double precioDescuento;
-                    precioDescuento = (precioBillete*10.0)/100;
-                    System.out.println("Tiene un descuento de " + precioDescuento + "€ en cualquier comercio");
-                    cuentaTres = 0;
-                }
+                        double precioDescuento;
+                        precioDescuento = (precioBillete*10.0)/100;
+                        System.out.println("Tiene un descuento de " + precioDescuento + "€ en cualquier comercio");
+                        cuentaTres = 0;
+                    }
                 }
             }
             else {
